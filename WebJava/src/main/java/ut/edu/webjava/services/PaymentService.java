@@ -1,7 +1,5 @@
 package ut.edu.webjava.services;
 
-import ut.edu.webjava.dto.PaymentRequest;
-import ut.edu.webjava.dto.PaymentResponse;
 import org.springframework.stereotype.Service;
 import java.util.UUID;
 

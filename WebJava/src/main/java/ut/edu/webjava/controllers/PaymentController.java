@@ -1,7 +1,5 @@
 package ut.edu.webjava.controllers;
 
-import ut.edu.webjava.dto.PaymentRequest;
-import ut.edu.webjava.dto.PaymentResponse;
 import ut.edu.webjava.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
