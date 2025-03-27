@@ -72,4 +72,7 @@ public class PaymentResponse {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+    public void setSuccess(boolean b) {
+    }
 }
