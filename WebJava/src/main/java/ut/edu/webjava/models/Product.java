@@ -1,6 +1,8 @@
 package ut.edu.webjava.models;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
+import ut.edu.webjava.models.Category;
+
 //import lombok.*;
 @Entity
 @Table(name ="products")
