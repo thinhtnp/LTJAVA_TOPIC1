@@ -18,16 +18,6 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     // Các phương thức tùy chỉnh (truy vấn tự động dựa trên quy tắc đặt tên):
 
-    // Tìm danh sách đơn hàng theo trạng thái
-    List<Order> findByStatus(String status);
-
-    // Tìm danh sách đơn hàng theo mã khách hàng
-    List<Order> findByCustomerId(Long customerId);
-
-    // Tìm danh sách đơn hàng theo khoảng ngày tạo
-    List<Order> findByCreatedDateBetween(String startDate, String endDate);
-
-    // Tìm danh sách đơn hàng với tổng tiền lớn hơn một giá trị cụ thể
-    List<Order> findByTotalAmountGreaterThan(Double amount);
 }
+
 
