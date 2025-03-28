@@ -19,6 +19,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     // Các phương thức tùy chỉnh (truy vấn tự động dựa trên quy tắc đặt tên):
 
+<<<<<<< HEAD
     // Tìm danh sách đơn hàng theo trạng thái
     //List<Order> findByStatus(String status);
 
@@ -32,5 +33,8 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
 
     // Tìm danh sách đơn hàng với tổng tiền lớn hơn một giá trị cụ thể
     //List<Order> findByTotalAmountGreaterThan(Double amount);
+=======
+>>>>>>> 950fac321e6fdb57da86a844c2305727e67c1ecc
 }
+
 

@@ -13,13 +13,17 @@ public class Order { // Khai báo lớp Order.
     @Id // Đánh dấu thuộc tính id là khóa chính.
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Tự động tăng giá trị id theo cơ chế của cơ sở dữ liệu.
     private Long id; // Thuộc tính id (khóa chính) của bảng orders.
-
+    private String status;
     @Column(nullable = false) // Cột orderDate không được phép null.
     private LocalDateTime orderDate; // Thuộc tính lưu trữ thời gian đặt hàng.
+<<<<<<< HEAD
     // Created_date
     @Column(name = "created_date", nullable = false, updatable = false)
     private LocalDateTime createdDate;
 
+=======
+    private LocalDateTime createdDate; // Ensure this field exists
+>>>>>>> 950fac321e6fdb57da86a844c2305727e67c1ecc
     @Column(nullable = false, precision = 10, scale = 2) // Định nghĩa cột totalAmount với độ chính xác 10 chữ số, 2 chữ số thập phân, không được null.
     private BigDecimal totalAmount; // Thuộc tính lưu tổng số tiền của đơn hàng.
 
@@ -43,6 +47,12 @@ public class Order { // Khai báo lớp Order.
     // Getters & Setters
     public Long getId() { return id; } // Trả về id của đơn hàng.
     public void setId(Long id) { this.id = id; } // Gán giá trị id cho đơn hàng.
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public LocalDateTime getOrderDate() { return orderDate; } // Trả về thời gian đặt hàng.
     public void setOrderDate(LocalDateTime orderDate) { this.orderDate = orderDate; } // Gán thời gian đặt hàng.
