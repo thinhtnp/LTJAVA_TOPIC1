@@ -27,6 +27,8 @@ public class User {
     public enum Role {
         ADMIN, USER
     }
+    @Version // Kiểm soát xung đột dữ liệu
+    private Integer version = 0;
 
     // Constructors
     public User() {}

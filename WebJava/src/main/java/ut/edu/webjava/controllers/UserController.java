@@ -48,9 +48,24 @@ public class UserController {
     }
 
     // Tạo mới hoặc cập nhật người dùng
+//    @PostMapping
+//    public User createUser(@RequestBody User user) {
+//        return userService.createUser(user);
+//    }
     @PostMapping
     public User createUser(@RequestBody User user) {
+        if (user.getId() != null) {
+            throw new RuntimeException("Không được tự đặt ID khi tạo mới User!");
+        }
         return userService.createUser(user);
+    }
+    // API cập nhật người dùng
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(
+            @PathVariable Long id,
+            @RequestBody User updatedUser) {
+        User user = userService.updateUser(id, updatedUser);
+        return ResponseEntity.ok(user);
     }
 
     // Xóa người dùng theo ID
