@@ -1,10 +1,15 @@
 package ut.edu.webjava.models;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.Collections;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,14 +26,15 @@ public class User {
     private String phone;
     private String address;
 
-    @Enumerated(EnumType.STRING) // Enum cho role
+    @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Version
+    private Integer version = 0;
 
     public enum Role {
         ADMIN, USER
     }
-    @Version // Kiểm soát xung đột dữ liệu
-    private Integer version = 0;
 
     // Constructors
     public User() {}
@@ -63,4 +69,30 @@ public class User {
 
     public Role getRole() { return role; }
     public void setRole(Role role) { this.role = role; }
+
+    // Triển khai các phương thức từ UserDetails
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singletonList(() -> "ROLE_" + role.name());  // Trả về quyền cho người dùng, ví dụ ROLE_USER, ROLE_ADMIN
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;  //  có thể tùy chỉnh điều này nếu cần
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;  //  có thể tùy chỉnh điều này nếu cần
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;  //  có thể tùy chỉnh điều này nếu cần
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;  //  có thể tùy chỉnh điều này nếu cần
+    }
 }
