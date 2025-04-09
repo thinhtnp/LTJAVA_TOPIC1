@@ -11,28 +11,32 @@ public class PageController {
 //        return "index";
 //    }
 
-    @GetMapping("/about")
+    @GetMapping("/about.html")
     public String about() {
         return "about";
     }
 
-    @GetMapping("/blog")
+    @GetMapping("/blog.html")
     public String blog() {
         return "blog";
     }
 
-    @GetMapping("/contact")
+    @GetMapping("/contact.html")
     public String contact() {
         return "contact";
     }
 
-    @GetMapping("/feature")
+    @GetMapping("/feature.html")
     public String feature() {
         return "feature";
     }
 
-    @GetMapping("/404")
+    @GetMapping("/404.html")
     public String notFound() {
         return "404";
+    }
+    @GetMapping("/testimonial.html")
+    public String testimonial() {
+        return "testimonial";
     }
 }
