@@ -30,6 +30,22 @@ public class CartService {
         });
     }
 
+//    public Cart addToCart(User user, Long productId, int quantity) {
+//        Cart cart = getCartByUser(user);
+//        Optional<Product> productOpt = productRepository.findById(productId);
+//
+//        if (productOpt.isEmpty()) {
+//            throw new RuntimeException("Product not found");
+//        }
+//
+//        Product product = productOpt.get();
+//        CartItem newItem = new CartItem(cart, product, quantity);
+//        cart.addItem(newItem);
+//        cartItemRepository.save(newItem);
+//        return cartRepository.save(cart);
+//    }
+
+//Them san pham vao gio hang
     public Cart addToCart(User user, Long productId, int quantity) {
         Cart cart = getCartByUser(user);
         Optional<Product> productOpt = productRepository.findById(productId);
@@ -39,11 +55,25 @@ public class CartService {
         }
 
         Product product = productOpt.get();
-        CartItem newItem = new CartItem(cart, product, quantity);
-        cart.addItem(newItem);
-        cartItemRepository.save(newItem);
+
+        // Kiểm tra nếu sản phẩm đã có thì cộng thêm số lượng
+        CartItem existingItem = cart.getItems().stream()
+                .filter(item -> item.getProduct().getId().equals(productId))
+                .findFirst()
+                .orElse(null);
+
+        if (existingItem != null) {
+            existingItem.setQuantity(existingItem.getQuantity() + quantity);
+            cartItemRepository.save(existingItem);
+        } else {
+            CartItem newItem = new CartItem(cart, product, quantity);
+            cart.addItem(newItem);
+            cartItemRepository.save(newItem);
+        }
+
         return cartRepository.save(cart);
     }
+
 
     public void removeItem(Long cartItemId) {
         cartItemRepository.deleteById(cartItemId);

@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.*;
 import ut.edu.webjava.models.Cart;
 import ut.edu.webjava.models.User;
 import ut.edu.webjava.services.CartService;
+import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 
-@RestController
-@RequestMapping("/api/cart")
+@Controller
+@RequestMapping("/cart")
 public class CartController {
     @Autowired
     private CartService cartService;
@@ -49,4 +51,14 @@ public class CartController {
         cartService.clearCart(user);
         return ResponseEntity.ok("Cart cleared");
     }
+
+    @GetMapping("/view")
+    public String viewCartPage(@RequestParam Long userId, Model model) {
+        User user = new User();
+        user.setId(userId);
+        Cart cart = cartService.getCartByUser(user);
+        model.addAttribute("cart", cart);
+        return "cart_view"; // render cart_view.html
+    }
+
 }
