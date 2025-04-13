@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giỏ hàng cao cấp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/assets/css/cart.css}">
+    <style>
+        body {
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1><i class="fa fa-shopping-cart"></i> Giỏ hàng của bạn</h1>
+
+    <div th:if="${#lists.isEmpty(cart.items)}" class="empty-cart">
+        <p>Không có sản phẩm nào trong giỏ hàng.</p>
+        <a th:href="@{/product.html}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Tiếp tục mua sắm</a>
+    </div>
+
+    <div th:if="${not #lists.isEmpty(cart.items)}">
+        <table class="cart-table">
+            <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Tổng</th>
+                <th>Hành động</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${cart.items}">
+                <td>
+                    <div class="product-info">
+                        <img th:src="@{/images/placeholder.png}" alt="Ảnh sản phẩm" class="product-img" />
+                        <span th:text="${item.product.name}">Tên sản phẩm</span>
+                    </div>
+                </td>
+                <td th:text="${item.product.price} + ' VND'"></td>
+                <td th:text="${item.quantity}"></td>
+                <td th:text="${item.product.price * item.quantity} + ' VND'"></td>
+                <td class="actions">
+                    <form th:action="@{'/api/cart/remove/' + ${item.id}}" method="post">
+                        <input type="hidden" name="_method" value="delete"/>
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Xóa</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <strong>Tổng cộng:
+                <span th:text="${#numbers.formatDecimal(cart.items.stream().mapToDouble(i -> i.product.price * i.quantity).sum(), 0, 'COMMA', 2, 'POINT')} + ' VND'"></span>
+            </strong>
+        </div>
+
+        <div class="actions">
+            <form th:action="@{/api/cart/clear}" method="post">
+                <input type="hidden" name="_method" value="delete"/>
+                <input type="hidden" name="userId" value="1"/>
+                <button type="submit" class="btn btn-warning"><i class="fa fa-trash-alt"></i> Xóa toàn bộ</button>
+            </form>
+            <a th:href="@{/product.html}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Tiếp tục mua</a>
+        </div>
+    </div>
+</div>
+<script th:src="@{/assets//js/cart.js}"></script>
+</body>
+</html>

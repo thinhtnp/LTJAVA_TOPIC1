@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Danh sách sản phẩm</title>
+</head>
+<body>
+<h2>Danh sách sản phẩm</h2>
+
+<div th:each="product : ${productList}">
+  <p><strong th:text="${product.name}">Tên sản phẩm</strong></p>
+  <p>Giá: <span th:text="${product.price}">0</span> VND</p>
+
+  <form th:action="@{/api/cart/add}" method="post">
+    <input type="hidden" name="userId" value="1"/> <!-- Giả định userId = 1 -->
+    <input type="hidden" name="productId" th:value="${product.id}"/>
+    <input type="number" name="quantity" value="1" min="1"/>
+    <button type="submit">Thêm vào giỏ</button>
+  </form>
+
+  <hr/>
+</div>
+
+<a href="/api/cart?userId=1">Xem giỏ hàng</a>
+</body>
+</html>
