@@ -35,8 +35,14 @@ public class PageController {
     public String notFound() {
         return "404";
     }
+
     @GetMapping("/testimonial.html")
     public String testimonial() {
         return "testimonial";
+    }
+
+    @GetMapping("/product.html")
+    public String product() {
+        return "product";
     }
 }

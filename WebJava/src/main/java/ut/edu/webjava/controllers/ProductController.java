@@ -5,7 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ut.edu.webjava.models.Product;
 import ut.edu.webjava.services.ProductService;
-
+import org.springframework.ui.Model;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RequestMapping;
+import ut.edu.webjava.repositories.ProductRepository;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,6 +17,7 @@ import java.util.Optional;
 public class ProductController {
     @Autowired
     private ProductService productService;
+    private ProductRepository productRepository;
 
     // Lấy danh sách tất cả sản phẩm
     @GetMapping
@@ -46,4 +50,10 @@ public class ProductController {
         productService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+//    @GetMapping
+//    public String listProducts(Model model) {
+//        model.addAttribute("productList", productRepository.findAll());
+//        return "product_list"; // Trả về template product_list.html
+//    }
 }
