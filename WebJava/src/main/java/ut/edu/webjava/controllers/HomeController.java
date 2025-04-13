@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     @GetMapping("/")
     public String Home() {
-        return "Home"; // Tên file trong thư mục templates
+        return "admin/index"; // Tên file trong thư mục templates
     }
 }
 
