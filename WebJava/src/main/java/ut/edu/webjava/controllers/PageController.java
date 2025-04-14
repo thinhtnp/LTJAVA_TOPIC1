@@ -45,4 +45,13 @@ public class PageController {
     public String product() {
         return "product";
     }
+
+    @GetMapping("/cart_view.html")
+    public String cartView() {
+        return "cart_view";
+    }
+    @GetMapping("/checkout.html")
+    public String checkout() {
+        return "checkout";
+    }
 }
