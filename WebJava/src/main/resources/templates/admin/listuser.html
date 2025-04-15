@@ -74,8 +74,12 @@
             <td th:text="${user.address}"></td>
             <td th:text="${user.role}"></td>
             <td>
-                <a href="#" class="btn btn-info">Sửa</a>
-                <a href="#" class="btn btn-danger">Xóa</a>
+                <a th:href="@{'/users/edit/' + ${user.id}}" class="btn btn-info">Sửa</a>
+
+                <form th:action="@{'/users/delete/' + ${user.id}}" method="post" style="display:inline;"
+                      onsubmit="return confirm('Bạn có chắc chắn muốn xóa người dùng này?');">
+                    <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                </form>
             </td>
         </tr>
         </tbody>
