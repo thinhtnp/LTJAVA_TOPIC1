@@ -16,6 +16,6 @@ public class ProductWebController {
     @GetMapping
     public String listProducts(Model model) {
         model.addAttribute("productList", productRepository.findAll());
-        return "product_list"; // Tên file HTML trong thư mục templates
+        return "admin/list-products"; // Tên file HTML trong thư mục templates
     }
 }
