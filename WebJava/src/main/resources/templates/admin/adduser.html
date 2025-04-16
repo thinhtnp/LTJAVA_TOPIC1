@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Người Dùng</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="p-3 mb-4 bg-warning text-dark fs-4 fw-bold text-center">
+    Chào mừng đến với trang thêm người dùng
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/admin}">QUẢN LÝ DANH MỤC</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/products}">Sản phẩm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/users}">Người dùng</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{#}">Đơn hàng</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="header-title mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Thêm Người Dùng Mới</h2>
+            <a th:href="@{users}" class="btn btn-secondary">Quay lại danh sách người dùng</a>
+        </div>
+    </div>
+
+    <form action="#" th:action="@{/users/add}" th:object="${user}" method="post">
+        <div class="card p-4">
+            <div class="mb-3">
+                <label for="username" class="form-label">Tên người dùng</label>
+                <input type="text" id="username" th:field="*{username}" class="form-control" placeholder="Nhập tên người dùng">
+                <div th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="Nhập email">
+                <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" id="password" th:field="*{password}" class="form-control" placeholder="Nhập mật khẩu">
+                <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Số điện thoại</label>
+                <input type="text" id="phone" th:field="*{phone}" class="form-control" placeholder="Nhập số điện thoại">
+                <div th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" class="text-danger"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="address" class="form-label">Địa chỉ</label>
+                <input type="text" id="address" th:field="*{address}" class="form-control" placeholder="Nhập địa chỉ">
+                <div th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="text-danger"></div>
+            </div>
+
+            <div class="mb-3">
+                <label for="role" class="form-label">Vai trò</label>
+                <select id="role" th:field="*{role}" class="form-select">
+                    <option value="ADMIN">Quản Trị</option>
+                    <option value="USER">Người Dùng</option>
+                </select>
+                <div th:if="${#fields.hasErrors('role')}" th:errors="*{role}" class="text-danger"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Thêm Người Dùng</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

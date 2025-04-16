@@ -42,7 +42,7 @@ public class UserService {
         user.setId(null); // Xóa ID để tránh lỗi xung đột
         return userRepository.save(user);
     }
-
+    @Transactional
     public User updateUser(Long id, User updatedUser) {
         User existingUser = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found"));
@@ -69,21 +69,28 @@ public class UserService {
         return userRepository.findById(id);
     }
 
-    //  HÀM ĐĂNG KÝ TÀI KHOẢN
+    // Đăng ký tài khoản người dùng từ CreateUserRequest
+    @Transactional
     public void registerUser(CreateUserRequest request) {
+        // Kiểm tra username có tồn tại không
         if (userRepository.findByUsername(request.getUsername()).isPresent()) {
             throw new RuntimeException("Username already exists");
         }
 
+        // Kiểm tra email có tồn tại không
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new RuntimeException("Email already exists");
         }
 
+        // Tạo đối tượng User từ CreateUserRequest
         User user = new User();
         user.setUsername(request.getUsername());
         user.setEmail(request.getEmail());
-        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setPassword(passwordEncoder.encode(request.getPassword())); // Mã hóa mật khẩu
 
+        // Lưu user vào database
         userRepository.save(user);
     }
+
+
 }

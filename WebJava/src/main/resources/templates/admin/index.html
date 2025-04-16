@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Foody - Organic Food Website Template</title>
+    <title>Comestic & Spa</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,8 +44,8 @@
 <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
     <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
         <div class="col-lg-6 px-5 text-start">
-            <small><i class="fa fa-map-marker-alt me-2"></i>123 Street, New York, USA</small>
-            <small class="ms-4"><i class="fa fa-envelope me-2"></i>info@example.com</small>
+            <small><i class="fa fa-map-marker-alt me-2"></i>02 Võ Oanh, Phường 25, Quận Bình Thạnh</small>
+            <small class="ms-4"><i class="fa fa-envelope me-2"></i>ComesticSpa@example.com</small>
         </div>
         <div class="col-lg-6 px-5 text-end">
             <small>Follow us:</small>
@@ -57,7 +57,7 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
-        <a th:href="@{index.html}" class="navbar-brand ms-4 ms-lg-0">
+        <a th:href="@{/}" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="fw-bold text-primary m-0">F<span class="text-secondary">oo</span>dy</h1>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -65,9 +65,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a th:href="@{index.html}" class="nav-item nav-link active">Trang chủ</a>
-                <a th:href="@{about.html}" class="nav-item nav-link">Thông tin về chúng tôi</a>
-                <a th:href="@{product.html}" class="nav-item nav-link">Danh sách sản phẩm</a>
+                <a th:href="@{/}" class="nav-item nav-link active">Trang chủ</a>
+                <a th:href="@{about.html}" class="nav-item nav-link">Thông tin</a>
+                <a th:href="@{product.html}" class="nav-item nav-link">Sản phầm</a>
                 <div class="nav-item dropdown">
                     <a th:href="@{#}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
@@ -77,13 +77,13 @@
 
                     </div>
                 </div>
-                <a th:href="@{contact.html}" class="nav-item nav-link">Contact Us</a>
+                <a th:href="@{contact.html}" class="nav-item nav-link">Hỗ trợ</a>
             </div>
             <div class="d-none d-lg-flex ms-2">
                 <a class="btn-sm-square bg-white rounded-circle ms-3" th:href="@{#}">
                     <small class="fa fa-search text-body"></small>
                 </a>
-                <a class="btn-sm-square bg-white rounded-circle ms-3" th:href="@{#}">
+                <a class="btn-sm-square bg-white rounded-circle ms-3" th:href="@{/login}">
                     <small class="fa fa-user text-body"></small>
                 </a>
                 <a class="btn-sm-square bg-white rounded-circle ms-3" th:href="@{cart_view.html}">
@@ -106,9 +106,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-lg-7">
-                                <h1 class="display-2 mb-5 animated slideInDown">Organic Food Is Good For Health</h1>
-                                <a th:href="@{#}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                <a th:href="@{#}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
+                                <h1 class="display-2 mb-5 animated slideInDown">Natural Cosmetic Is Good For Health</h1>
+                                <a th:href="@{#}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Sản phẩm</a>
+                                <a th:href="@{#}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Dịch vụ</a>
                             </div>
                         </div>
                     </div>
@@ -120,9 +120,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-lg-7">
-                                <h1 class="display-2 mb-5 animated slideInDown">Natural Food Is Always Healthy</h1>
-                                <a th:href="@{#}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Products</a>
-                                <a th:href="@{#}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Services</a>
+                                <h1 class="display-2 mb-5 animated slideInDown">Natural Cosmetic Is Always Healthy</h1>
+                                <a th:href="@{#}" class="btn btn-primary rounded-pill py-sm-3 px-sm-5">Sản phẩm</a>
+                                <a th:href="@{#}" class="btn btn-secondary rounded-pill py-sm-3 px-sm-5 ms-3">Dịch vụ</a>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <h1 class="display-5 mb-4">Best Organic Fruits And Vegetables</h1>
+                <h1 class="display-5 mb-4">Best Natural Cosmetic And Spa</h1>
                 <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                 <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
                 <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
@@ -245,10 +245,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -266,10 +266,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -287,10 +287,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -308,10 +308,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -329,10 +329,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -350,10 +350,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -374,7 +374,7 @@
                                     <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -392,10 +392,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -420,10 +420,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -441,10 +441,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -462,10 +462,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -483,10 +483,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -504,10 +504,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -525,10 +525,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -546,10 +546,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -567,10 +567,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -595,10 +595,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -616,10 +616,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -637,10 +637,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -658,10 +658,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -679,10 +679,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -700,10 +700,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -721,10 +721,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -742,10 +742,10 @@
                             </div>
                             <div class="d-flex border-top">
                                 <small class="w-50 text-center border-end py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>View detail</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-eye text-primary me-2"></i>Chi tiết</a>
                                 </small>
                                 <small class="w-50 text-center py-2">
-                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Add to cart</a>
+                                    <a class="text-body" th:href="@{#}"><i class="fa fa-shopping-bag text-primary me-2"></i>Thêm giỏ hàng</a>
                                 </small>
                             </div>
                         </div>
@@ -792,8 +792,8 @@
                 <div class="d-flex align-items-center">
                     <img class="flex-shrink-0 rounded-circle" th:src="@{/assets/img/testimonial-1.jpg}" alt="">
                     <div class="ms-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="mb-1">Phúc Thịnh</h5>
+                        <span>Quản lí</span>
                     </div>
                 </div>
             </div>
@@ -803,8 +803,8 @@
                 <div class="d-flex align-items-center">
                     <img class="flex-shrink-0 rounded-circle" th:src="@{/assets/img/testimonial-2.jpg}" alt="">
                     <div class="ms-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="mb-1">Công Tài</h5>
+                        <span>Chuyên viên</span>
                     </div>
                 </div>
             </div>
@@ -814,8 +814,8 @@
                 <div class="d-flex align-items-center">
                     <img class="flex-shrink-0 rounded-circle" th:src="@{/assets/img/testimonial-3.jpg}" alt="">
                     <div class="ms-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="mb-1">Văn Tị</h5>
+                        <span>Lễ tân</span>
                     </div>
                 </div>
             </div>
@@ -825,8 +825,8 @@
                 <div class="d-flex align-items-center">
                     <img class="flex-shrink-0 rounded-circle" th:src="@{/assets/img/testimonial-4.jpg}" alt="">
                     <div class="ms-3">
-                        <h5 class="mb-1">Client Name</h5>
-                        <span>Profession</span>
+                        <h5 class="mb-1">Hữu Thắng</h5>
+                        <span>CSKH</span>
                     </div>
                 </div>
             </div>
@@ -885,8 +885,8 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h1 class="fw-bold text-primary mb-4">F<span class="text-secondary">oo</span>dy</h1>
-                <p>Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita</p>
+                <h1 class="fw-bold text-primary mb-4">Co<span class="text-secondary">met</span>ic</h1>
+                <p>Journey to honor beauty</p>
                 <div class="d-flex pt-2">
                     <a class="btn btn-square btn-outline-light rounded-circle me-1" th:href="@{#}"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square btn-outline-light rounded-circle me-1" th:href="@{#}"><i class="fab fa-facebook-f"></i></a>
@@ -896,9 +896,9 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Address</h4>
-                <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                <p><i class="fa fa-map-marker-alt me-3"></i>02 Võ Oanh, Phường 25, Quận Bình Thạnh</p>
                 <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                <p><i class="fa fa-envelope me-3"></i>ComesticSpa@example.com</p>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Quick Links</h4>
@@ -910,7 +910,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-light mb-4">Newsletter</h4>
-                <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                <p>Enhancing Vietnamese beauty</p>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -922,12 +922,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a th:href="@{#}">Your Site Name</a>, All Right Reserved.
+                    &copy; <a th:href="@{#}">Cosmetic & Spa</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a th:href="@{https://htmlcodex.com}">HTML Codex</a>
-                    <br>Distributed By: <a th:href="@{https://themewagon.com}" target="_blank">ThemeWagon</a>
+
+
                 </div>
             </div>
         </div>

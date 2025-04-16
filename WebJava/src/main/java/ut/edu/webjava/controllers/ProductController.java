@@ -51,9 +51,10 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
-//    @GetMapping
-//    public String listProducts(Model model) {
-//        model.addAttribute("productList", productRepository.findAll());
-//        return "product_list"; // Trả về template product_list.html
+//    @GetMapping("/list-products.html")
+//    public String showProductList(Model model) {
+//        model.addAttribute("products", productService.findAll());
+//        model.addAttribute("product", new Product()); // for the form
+//        return "list-product";
 //    }
 }

@@ -12,6 +12,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+
     @Autowired
     private UserService userService;
 
@@ -20,12 +21,14 @@ public class UserController {
     public List<User> getAllUsers() {
         return userService.findAll();
     }
-    //Luu user
+
+    // Lưu user mới
     @PostMapping("/save")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         User savedUser = userService.saveUser(user);
         return ResponseEntity.ok(savedUser);
     }
+
     // Lấy thông tin người dùng theo ID
     @GetMapping("/{id}")
     public ResponseEntity<User> getUserById(@PathVariable Long id) {
@@ -48,22 +51,24 @@ public class UserController {
     }
 
     // Tạo mới hoặc cập nhật người dùng
-//    @PostMapping
-//    public User createUser(@RequestBody User user) {
-//        return userService.createUser(user);
-//    }
     @PostMapping
-    public User createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@RequestBody User user) {
         if (user.getId() != null) {
             throw new RuntimeException("Không được tự đặt ID khi tạo mới User!");
         }
-        return userService.createUser(user);
+        User createdUser = userService.createUser(user); // Tạo người dùng mới
+        return ResponseEntity.ok(createdUser);
     }
+
     // API cập nhật người dùng
     @PutMapping("/{id}")
-    public ResponseEntity<User> updateUser(
-            @PathVariable Long id,
-            @RequestBody User updatedUser) {
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {
+        Optional<User> existingUser = userService.findById(id);
+        if (existingUser.isEmpty()) {
+            return ResponseEntity.notFound().build(); // Trả về lỗi 404 nếu người dùng không tồn tại
+        }
+
+        updatedUser.setId(id);
         User user = userService.updateUser(id, updatedUser);
         return ResponseEntity.ok(user);
     }
@@ -71,6 +76,11 @@ public class UserController {
     // Xóa người dùng theo ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        Optional<User> existingUser = userService.findById(id);
+        if (existingUser.isEmpty()) {
+            return ResponseEntity.notFound().build(); // Trả về lỗi 404 nếu người dùng không tồn tại
+        }
+
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
