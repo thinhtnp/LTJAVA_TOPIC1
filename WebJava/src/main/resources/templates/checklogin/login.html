@@ -67,8 +67,7 @@
 
 <!-- Bên trái: màu vàng nhạt + nút quay lại shop -->
 <div class="left-side">
-    <a th:href="@{http://localhost:8080/}" class="btn btn-outline-success btn-return-shop">Quay trở lại shop</a>
-
+    <a href="/" class="btn btn-outline-success btn-return-shop">Quay trở lại shop</a>
 </div>
 
 <!-- Bên phải: khung đăng nhập -->
@@ -77,9 +76,11 @@
 <div class="login-container">
     <h3 class="text-center mb-4">Đăng nhập hệ thống</h3>
 
+    <!-- Thông báo lỗi nếu có -->
     <div th:if="${param.error}" class="alert alert-danger">Sai tên đăng nhập hoặc mật khẩu!</div>
     <div th:if="${param.logout}" class="alert alert-success">Bạn đã đăng xuất thành công.</div>
 
+    <!-- Form đăng nhập -->
     <form th:action="@{/login}" method="post">
         <div class="mb-3">
             <label for="username" class="form-label">Tên đăng nhập</label>
@@ -90,9 +91,14 @@
             <input type="password" class="form-control" id="password" name="password" required />
         </div>
 
+        <!-- Nút đăng nhập -->
         <button type="submit" class="btn btn-success w-100 mb-2">Đăng nhập</button>
-        <a th:href="@{/register}" class="btn btn-light w-100 mb-2">Đăng ký</a>
-        <a th:href="@{/forgot-password}" class="forgot-link">Quên mật khẩu?</a>
+
+        <!-- Link chuyển đến trang đăng ký -->
+        <a href="/register" class="btn btn-light w-100 mb-2">Đăng ký</a>
+
+        <!-- Link quên mật khẩu -->
+        <a href="/forgot-password" class="forgot-link">Quên mật khẩu?</a>
     </form>
 </div>
 

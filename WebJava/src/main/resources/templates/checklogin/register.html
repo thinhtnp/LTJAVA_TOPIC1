@@ -5,7 +5,7 @@
   <title>Đăng ký tài khoản</title>
   <style>
     body {
-      background-color: #add8e6; /* Màu xanh dương nhạt */
+      background-color: #f0f8ff; /* Màu nền sáng */
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
@@ -15,14 +15,7 @@
       flex-direction: column;
     }
     .container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-    }
-    form {
-      background-color: white;
+      background-color: #fff;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -32,73 +25,121 @@
     h2 {
       font-size: 30px;
       margin-bottom: 20px;
+      text-align: center;
     }
     div {
       margin-bottom: 15px;
       display: flex;
-      justify-content: flex-start; /* Căn trái các phần tử */
+      justify-content: flex-start;
       align-items: center;
     }
     label {
-      width: 150px; /* Độ rộng nhãn để căn chỉnh */
-      margin-right: 10px; /* Khoảng cách giữa nhãn và ô input */
+      width: 150px;
+      margin-right: 10px;
     }
     input {
       width: 100%;
-      padding: 8px;
+      padding: 10px;
       border-radius: 4px;
       border: 1px solid #ccc;
+      margin-bottom: 5px;
     }
     button {
       width: 100%;
-      padding: 10px;
+      padding: 12px;
       background-color: #4CAF50;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 16px;
     }
     button:hover {
       background-color: #45a049;
     }
-    a {
-      display: block;
+    #errorMessage {
+      color: red;
       text-align: center;
       margin-top: 10px;
     }
-    p {
+    a {
       text-align: center;
+      display: block;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <form action="#" th:action="@{/register}" th:object="${user}" method="post">
+  <form id="registerForm">
     <h2>Đăng ký tài khoản mới</h2>
     <div>
       <label for="username">Tên đăng nhập:</label>
-      <input type="text" id="username" th:field="*{username}" placeholder="Nhập tên đăng nhập" required />
+      <input type="text" id="username" name="username" placeholder="Nhập tên đăng nhập" required />
     </div>
     <div>
       <label for="email">Email:</label>
-      <input type="email" id="email" th:field="*{email}" placeholder="Nhập email" required />
+      <input type="email" id="email" name="email" placeholder="Nhập email" required />
     </div>
     <div>
       <label for="password">Mật khẩu:</label>
-      <input type="password" id="password" th:field="*{password}" placeholder="Nhập mật khẩu" required />
+      <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" required />
     </div>
     <div>
       <label for="confirmPassword">Xác nhận mật khẩu:</label>
-      <input type="password" id="confirmPassword" placeholder="Xác nhận mật khẩu" required />
+      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu" required />
     </div>
     <div>
       <button type="submit">Đăng ký</button>
     </div>
-    <div th:if="${errorMessage}">
-      <p style="color: red;" th:text="${errorMessage}"></p>
-    </div>
+    <div id="errorMessage"></div>
   </form>
   <a href="/login">Đã có tài khoản? Đăng nhập</a>
 </div>
+
+<script>
+  document.getElementById('registerForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Kiểm tra nếu mật khẩu và xác nhận mật khẩu không trùng nhau
+    if (password !== confirmPassword) {
+      document.getElementById('errorMessage').textContent = "Mật khẩu và xác nhận mật khẩu không khớp!";
+      return;
+    }
+
+    const data = {
+      username: username,
+      email: email,
+      password: password
+    };
+
+    try {
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message);
+        window.location.href = "/login"; // chuyển đến trang đăng nhập
+      } else {
+        const error = await response.json();
+        document.getElementById('errorMessage').textContent = error.error;
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+      document.getElementById('errorMessage').textContent = "Đã xảy ra lỗi! Vui lòng thử lại.";
+    }
+  });
+</script>
 </body>
 </html>
