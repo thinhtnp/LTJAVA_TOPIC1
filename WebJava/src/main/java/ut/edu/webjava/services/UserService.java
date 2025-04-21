@@ -44,13 +44,19 @@ public class UserService {
     }
     @Transactional
     public User updateUser(Long id, User updatedUser) {
-        User existingUser = userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        Optional<User> existingUserOpt = userRepository.findById(id);
+        if (existingUserOpt.isPresent()) {
+            User existingUser = existingUserOpt.get();
+            existingUser.setUsername(updatedUser.getUsername());
+            existingUser.setEmail(updatedUser.getEmail());
+            existingUser.setPhone(updatedUser.getPhone());
+            existingUser.setAddress(updatedUser.getAddress());
+            existingUser.setRole(updatedUser.getRole());
+            return userRepository.save(existingUser);
 
-        existingUser.setUsername(updatedUser.getUsername());
-        existingUser.setEmail(updatedUser.getEmail());
-
-        return userRepository.save(existingUser);
+        } else {
+            throw new IllegalArgumentException("User not found");
+        }
     }
 
     public List<User> findAll() {

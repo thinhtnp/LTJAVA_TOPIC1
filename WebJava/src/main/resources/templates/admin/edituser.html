@@ -41,8 +41,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="role" class="form-label">Vai trò:</label>
-                    <input type="text" id="role" class="form-control" th:field="*{role}">
+                    <select name="role">
+                        <option value="USER" th:selected="${user.role == 'USER'}">USER</option>
+                        <option value="ADMIN" th:selected="${user.role == 'ADMIN'}">ADMIN</option>
+                    </select>
                 </div>
 
                 <button type="submit" class="btn btn-success">Lưu thay đổi</button>
