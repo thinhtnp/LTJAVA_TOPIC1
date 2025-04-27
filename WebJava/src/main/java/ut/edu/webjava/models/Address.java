@@ -16,11 +16,11 @@ public class Address {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserDtls user;
 
     public Address() {}
 
-    public Address(String street, String city, String state, String zipCode, User user) {
+    public Address(String street, String city, String state, String zipCode, UserDtls user) {
         this.street = street;
         this.city = city;
         this.state = state;
@@ -48,7 +48,7 @@ public class Address {
         return zipCode;
     }
 
-    public User getUser() {
+    public UserDtls getUser() {
         return user;
     }
 
@@ -72,7 +72,7 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserDtls user) {
         this.user = user;
     }
 }
