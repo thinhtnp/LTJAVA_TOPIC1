@@ -1,4 +1,4 @@
-package ut.edu.webjava.configurations;
+package ut.edu.webjava.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
