@@ -16,6 +16,7 @@ import java.util.Set;
 @Service
 public class AuthSucessHandlerImpl implements AuthenticationSuccessHandler {
 
+<<<<<<< HEAD
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
@@ -32,5 +33,23 @@ public class AuthSucessHandlerImpl implements AuthenticationSuccessHandler {
 		}
 		
 	}
+=======
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+                                        Authentication authentication) throws IOException, ServletException {
+
+        Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
+
+        Set<String> roles = AuthorityUtils.authorityListToSet(authorities);
+
+        if(roles.contains("ROLE_ADMIN"))
+        {
+            response.sendRedirect("/admin/");
+        }else {
+            response.sendRedirect("/");
+        }
+
+    }
+>>>>>>> 0ec1c7b04625a57ce3fcef934d4e6f2378453e87
 
 }
