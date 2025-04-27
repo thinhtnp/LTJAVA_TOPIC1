@@ -1,9 +1,9 @@
-package ut.edu.webjava.services;
+package ut.edu.webjava.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ut.edu.webjava.models.Review;
-import ut.edu.webjava.repositories.ReviewRepository;
+import ut.edu.webjava.models.ProductOrder;
+import ut.edu.webjava.repository.ReviewRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,15 +19,15 @@ public class ReviewService {
         this.reviewRepository = reviewRepository;
     }
 
-    public List<Review> getAllReviews() {
+    public List<ProductOrder> getAllReviews() {
         return reviewRepository.findAll();
     }
 
-    public Optional<Review> getReviewById(Long id) {
+    public Optional<ProductOrder> getReviewById(Long id) {
         return reviewRepository.findById(id);
     }
 
-    public Review saveReview(Review review) {
+    public ProductOrder saveReview(ProductOrder review) {
         return reviewRepository.save(review);
     }
 

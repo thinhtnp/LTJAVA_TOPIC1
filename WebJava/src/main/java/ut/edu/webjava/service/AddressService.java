@@ -1,9 +1,9 @@
-package ut.edu.webjava.services;
+package ut.edu.webjava.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ut.edu.webjava.models.Address;
-import ut.edu.webjava.repositories.AddressRepository;
+import ut.edu.webjava.repository.AddressRepository;
 
 import java.util.List;
 import java.util.Optional;
